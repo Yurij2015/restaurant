@@ -1449,21 +1449,21 @@ div.ppt { display:none !important; }
 	color: #9a9a9a;
 }
 
-.inner-page .contactus .contact-form {	
+.inner-page .contactus .register-form {
 	padding: 15px;
 	background: #fff;
 	border: 1px solid #eee;
 	border-radius: 4px;
 }
 
-.inner-page .contactus .contact-form h3{
+.inner-page .contactus .register-form h3{
 	margin-top: 0; 
 	padding-bottom: 6px;
 	font-size: 20px;
 	border-bottom: 4px double #eee;
 }
 
-.inner-page .contactus .contact-form .form-group { margin-top: 15px; }
+.inner-page .contactus .register-form .form-group { margin-top: 15px; }
 .inner-page .contactus .map-container {
 	height: 400px;
 	border: 3px solid #fff;

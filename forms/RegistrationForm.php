@@ -7,8 +7,7 @@
 
 class RegistrationForm {
 	private $email;
-	private $username;
-	private $usersecondname;
+	private $login;
 	private $password;
 	private $passwordConfirm;
 
@@ -18,14 +17,13 @@ class RegistrationForm {
 	 */
 	function __construct( Array $data ) {
 		$this->email           = isset( $data['email'] ) ? $data['email'] : null;
-		$this->username        = isset( $data['username'] ) ? $data['username'] : null;
-		$this->usersecondname  = isset( $data['usersecondname'] ) ? $data['usersecondname'] : null;
+		$this->login        = isset( $data['login'] ) ? $data['login'] : null;
 		$this->password        = isset( $data['password'] ) ? $data['password'] : null;
 		$this->passwordConfirm = isset( $data['passwordConfirm'] ) ? $data['passwordConfirm'] : null;
 	}
 
 	public function validate() {
-		return ! empty( $this->email ) && ! empty( $this->username ) && ! empty( $this->usersecondname ) && ! empty( $this->password ) && ! empty( $this->passwordConfirm ) && $this->passwordsMatch();
+		return ! empty( $this->email ) && ! empty( $this->login ) && ! empty( $this->password ) && ! empty( $this->passwordConfirm ) && $this->passwordsMatch();
 	}
 
 	public function passwordsMatch() {
@@ -78,29 +76,15 @@ class RegistrationForm {
 	/**
 	 * @return mixed
 	 */
-	public function getUserName() {
-		return $this->username;
+	public function getLogin() {
+		return $this->login;
 	}
 
 	/**
-	 * @param mixed $username
+	 * @param mixed $login
 	 */
-	public function setUserName( $username ) {
-		$this->username = $username;
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getUserSecondName() {
-		return $this->usersecondname;
-	}
-
-	/**
-	 * @param mixed $usersecondname
-	 */
-	public function setUserSecondName( $usersecondname ) {
-		$this->usersecondname = $usersecondname;
+	public function setLogin( $login ) {
+		$this->login = $login;
 	}
 
 

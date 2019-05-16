@@ -311,7 +311,7 @@ return array(
   'Search' => 'Искать',
   'SearchEmptyResult' => 'Ни фига',
   'ReloadPageWithDefaults' => 'Если вы видите это сообщение впервые, попробуйте <a class="alert-link" href="%s">перезагрузить страницу с настройками по умолчанию</a>. Вдруг повезет.',
-  'HomePage' => 'Морда',
+  'HomePage' => 'Главная страница административной панели',
   'AddMultipleRecords' => 'Добавить %s записей',
   'FilterOperatorDateEquals' => 'Дата равна',
   'FilterOperatorDateEqualsShort' => 'Дата =',
