@@ -46,7 +46,7 @@
                 '`users`');
             $this->dataset->addFields(
                 array(
-                    new IntegerField('id_users', true, true),
+                    new IntegerField('id_users', true, true, true),
                     new StringField('login', true),
                     new StringField('password', true),
                     new StringField('email'),

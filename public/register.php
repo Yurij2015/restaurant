@@ -48,7 +48,7 @@ include_once('header.php');
             <!-- Heading -->
             <h2 class="white">Регистрация</h2>
             <ol class="breadcrumb">
-                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.php">Главная</a></li>
                 <li class="active">Регистрация</li>
             </ol>
             <div class="clearfix"></div>

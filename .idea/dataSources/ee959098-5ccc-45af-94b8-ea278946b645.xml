@@ -1781,26 +1781,27 @@
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="446" parent="344" name="summa_chek">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="447" parent="344" name="date_chek">
       <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="448" parent="344" name="summa_nomer">
       <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="449" parent="344" name="summa_service">
       <Position>5</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="450" parent="344" name="client_id_client">
@@ -1815,7 +1816,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="452" parent="344" name="order_date_order">
+    <column id="452" parent="344" name="order_idorder">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1830,7 +1831,7 @@
       <Type>btree</Type>
     </index>
     <index id="455" parent="344" name="fk_chek_order1_idx">
-      <ColNames>order_date_order</ColNames>
+      <ColNames>order_idorder</ColNames>
       <Type>btree</Type>
     </index>
     <key id="456" parent="344" name="PRIMARY">
@@ -1851,51 +1852,59 @@
       <RefColNames>id_item</RefColNames>
     </foreign-key>
     <foreign-key id="459" parent="344" name="fk_chek_order1">
-      <ColNames>order_date_order</ColNames>
+      <ColNames>order_idorder</ColNames>
       <RefSchemaName>restaurant</RefSchemaName>
       <RefTableName>order</RefTableName>
-      <RefColNames>date_order</RefColNames>
+      <RefColNames>idorder</RefColNames>
     </foreign-key>
     <column id="460" parent="345" name="id_client">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="461" parent="345" name="surname">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="462" parent="345" name="firstname">
       <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="463" parent="345" name="second_name">
       <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="464" parent="345" name="date">
       <Position>5</Position>
       <Comment>Дата рождения</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="465" parent="345" name="pasport">
       <Position>6</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="466" parent="345" name="email">
       <Position>7</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>char(15)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="467" parent="345" name="telefon">
       <Position>8</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(15)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="468" parent="345" name="PRIMARY">
@@ -1907,21 +1916,22 @@
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="470" parent="346" name="del_title">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="471" parent="346" name="class_menu">
       <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="472" parent="346" name="number_peace_menu">
       <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="473" parent="346" name="restorans_id_restoran">
@@ -1949,6 +1959,7 @@
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="478" parent="347" name="price_id_price">
@@ -1983,362 +1994,432 @@ price_id_price</ColNames>
       <RefTableName>price</RefTableName>
       <RefColNames>id_price</RefColNames>
     </foreign-key>
-    <column id="484" parent="348" name="date_order">
+    <column id="484" parent="348" name="idorder">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="485" parent="348" name="client_id_client">
+    <column id="485" parent="348" name="order_numb">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="486" parent="348" name="price_menu">
+    <column id="486" parent="348" name="date_order">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="487" parent="348" name="menu_season_price">
+    <column id="487" parent="348" name="client_id_client">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="488" parent="348" name="service">
+    <column id="488" parent="348" name="menu_season_price">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="489" parent="348" name="price_menu">
+      <Position>6</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="490" parent="348" name="service">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="491" parent="348" name="price_service">
+      <Position>8</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="492" parent="348" name="fk_order_client1_idx">
+      <ColNames>client_id_client</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="493" parent="348" name="fk_order_menu_season_price1_idx">
+      <ColNames>menu_season_price</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="494" parent="348" name="fk_order_service_season_price1_idx">
+      <ColNames>service</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="495" parent="348" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idorder</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="496" parent="348" name="fk_order_client1">
+      <ColNames>client_id_client</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>id_client</RefColNames>
+    </foreign-key>
+    <foreign-key id="497" parent="348" name="fk_order_menu_season_price1">
+      <ColNames>menu_season_price</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>menu_season_price</RefTableName>
+      <RefColNames>price_id_price</RefColNames>
+    </foreign-key>
+    <foreign-key id="498" parent="348" name="fk_order_service_season_price1">
+      <ColNames>service</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>service_season_price</RefTableName>
+      <RefColNames>service_id_service</RefColNames>
+    </foreign-key>
+    <column id="499" parent="349" name="id_price">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="500" parent="349" name="price_summer">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="489" parent="348" name="season_price_service">
+    <column id="501" parent="349" name="price_fall">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="502" parent="349" name="price_winter">
+      <Position>4</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="503" parent="349" name="price_spring">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="504" parent="349" name="menu_id_item">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="490" parent="348" name="fk_order_client1_idx">
-      <ColNames>client_id_client</ColNames>
+    <index id="505" parent="349" name="fk_price_menu1_idx">
+      <ColNames>menu_id_item</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="491" parent="348" name="fk_order_menu_season_price1_idx">
-      <ColNames>price_menu
-menu_season_price</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="492" parent="348" name="fk_order_service_season_price1_idx">
-      <ColNames>service
-season_price_service</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="493" parent="348" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>date_order</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="494" parent="348" name="fk_order_client1">
-      <ColNames>client_id_client</ColNames>
-      <RefSchemaName>restaurant</RefSchemaName>
-      <RefTableName>client</RefTableName>
-      <RefColNames>id_client</RefColNames>
-    </foreign-key>
-    <foreign-key id="495" parent="348" name="fk_order_menu_season_price1">
-      <ColNames>price_menu
-menu_season_price</ColNames>
-      <RefSchemaName>restaurant</RefSchemaName>
-      <RefTableName>menu_season_price</RefTableName>
-      <RefColNames>menu_id_item
-price_id_price</RefColNames>
-    </foreign-key>
-    <foreign-key id="496" parent="348" name="fk_order_service_season_price1">
-      <ColNames>service
-season_price_service</ColNames>
-      <RefSchemaName>restaurant</RefSchemaName>
-      <RefTableName>service_season_price</RefTableName>
-      <RefColNames>service_id_service
-season_price_service</RefColNames>
-    </foreign-key>
-    <column id="497" parent="349" name="id_price">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="498" parent="349" name="price_summer">
-      <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="499" parent="349" name="price_fall">
-      <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="500" parent="349" name="price_winter">
-      <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="501" parent="349" name="price_spring">
-      <Position>5</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="502" parent="349" name="PRIMARY">
+    <key id="506" parent="349" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_price</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="503" parent="350" name="id_restoran">
+    <foreign-key id="507" parent="349" name="fk_price_menu1">
+      <ColNames>menu_id_item</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>menu</RefTableName>
+      <RefColNames>id_item</RefColNames>
+    </foreign-key>
+    <column id="508" parent="350" name="id_restoran">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="504" parent="350" name="number_phone_restoran">
+    <column id="509" parent="350" name="number_phone_restoran">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="505" parent="350" name="email">
+    <column id="510" parent="350" name="email">
       <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>char(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="506" parent="350" name="address">
+    <column id="511" parent="350" name="address">
       <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="507" parent="350" name="PRIMARY">
+    <column id="512" parent="350" name="description">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="513" parent="350" name="resto_title">
+      <Position>6</Position>
+      <DataType>varchar(145)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="514" parent="350" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_restoran</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="508" parent="351" name="id_price_service">
+    <column id="515" parent="351" name="id_price_service">
       <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="516" parent="351" name="price_summer">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="517" parent="351" name="price_fall">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="518" parent="351" name="price_winter">
+      <Position>4</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="519" parent="351" name="price_spring">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="520" parent="351" name="service_id_service">
+      <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="509" parent="351" name="price_summer">
-      <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="510" parent="351" name="price_fall">
-      <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="511" parent="351" name="price_winter">
-      <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="512" parent="351" name="price_spring">
-      <Position>5</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="513" parent="351" name="PRIMARY">
+    <index id="521" parent="351" name="fk_season_price_service_service1_idx">
+      <ColNames>service_id_service</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="522" parent="351" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_price_service</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="514" parent="352" name="id_service">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="515" parent="352" name="service_title">
-      <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="516" parent="352" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id_service</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="517" parent="353" name="id_service">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="518" parent="353" name="number_service">
-      <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="519" parent="353" name="summa_service">
-      <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="520" parent="353" name="client_id_client">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="521" parent="353" name="season_price_service">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="522" parent="353" name="fk_service_client1_idx">
-      <ColNames>client_id_client</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="523" parent="353" name="fk_service_client_season_price_service1_idx">
-      <ColNames>season_price_service</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="524" parent="353" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id_service</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="525" parent="353" name="fk_service_client1">
-      <ColNames>client_id_client</ColNames>
-      <RefSchemaName>restaurant</RefSchemaName>
-      <RefTableName>client</RefTableName>
-      <RefColNames>id_client</RefColNames>
-    </foreign-key>
-    <foreign-key id="526" parent="353" name="fk_service_client_season_price_service1">
-      <ColNames>season_price_service</ColNames>
-      <RefSchemaName>restaurant</RefSchemaName>
-      <RefTableName>season_price_service</RefTableName>
-      <RefColNames>id_price_service</RefColNames>
-    </foreign-key>
-    <column id="527" parent="354" name="service_id_service">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="528" parent="354" name="season_price_service">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="529" parent="354" name="fk_service_has_season_price_service_service1_idx">
-      <ColNames>service_id_service</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="530" parent="354" name="fk_service_has_season_price_service_season_price_service1_idx">
-      <ColNames>season_price_service</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="531" parent="354" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>service_id_service
-season_price_service</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="532" parent="354" name="fk_service_has_season_price_service_service1">
+    <foreign-key id="523" parent="351" name="fk_season_price_service_service1">
       <ColNames>service_id_service</ColNames>
       <RefSchemaName>restaurant</RefSchemaName>
       <RefTableName>service</RefTableName>
       <RefColNames>id_service</RefColNames>
     </foreign-key>
-    <foreign-key id="533" parent="354" name="fk_service_has_season_price_service_season_price_service1">
+    <column id="524" parent="352" name="id_service">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="525" parent="352" name="service_title">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="526" parent="352" name="servicedescription">
+      <Position>3</Position>
+      <DataType>varchar(250)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="527" parent="352" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_service</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="528" parent="353" name="id_service">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="529" parent="353" name="number_service">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="530" parent="353" name="summa_service">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="531" parent="353" name="client_id_client">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="532" parent="353" name="season_price_service">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="533" parent="353" name="fk_service_client1_idx">
+      <ColNames>client_id_client</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="534" parent="353" name="fk_service_client_season_price_service1_idx">
+      <ColNames>season_price_service</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="535" parent="353" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_service</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="536" parent="353" name="fk_service_client1">
+      <ColNames>client_id_client</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>id_client</RefColNames>
+    </foreign-key>
+    <foreign-key id="537" parent="353" name="fk_service_client_season_price_service1">
       <ColNames>season_price_service</ColNames>
       <RefSchemaName>restaurant</RefSchemaName>
       <RefTableName>season_price_service</RefTableName>
       <RefColNames>id_price_service</RefColNames>
     </foreign-key>
-    <column id="534" parent="355" name="id_ticket">
+    <column id="538" parent="354" name="service_id_service">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="535" parent="355" name="chek_id_chek">
+    <column id="539" parent="354" name="season_price_service">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="536" parent="355" name="date">
-      <Position>3</Position>
-      <DataType>varchar(45)|0s</DataType>
+    <index id="540" parent="354" name="fk_service_has_season_price_service_service1_idx">
+      <ColNames>service_id_service</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="541" parent="354" name="fk_service_has_season_price_service_season_price_service1_idx">
+      <ColNames>season_price_service</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="542" parent="354" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>service_id_service
+season_price_service</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="543" parent="354" name="fk_service_has_season_price_service_service1">
+      <ColNames>service_id_service</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>service</RefTableName>
+      <RefColNames>id_service</RefColNames>
+    </foreign-key>
+    <foreign-key id="544" parent="354" name="fk_service_has_season_price_service_season_price_service1">
+      <ColNames>season_price_service</ColNames>
+      <RefSchemaName>restaurant</RefSchemaName>
+      <RefTableName>season_price_service</RefTableName>
+      <RefColNames>id_price_service</RefColNames>
+    </foreign-key>
+    <column id="545" parent="355" name="id_ticket">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="537" parent="355" name="fk_ticket_chek1_idx">
+    <column id="546" parent="355" name="chek_id_chek">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="547" parent="355" name="date">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="548" parent="355" name="fk_ticket_chek1_idx">
       <ColNames>chek_id_chek</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="538" parent="355" name="PRIMARY">
+    <key id="549" parent="355" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_ticket</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="539" parent="355" name="fk_ticket_chek1">
+    <foreign-key id="550" parent="355" name="fk_ticket_chek1">
       <ColNames>chek_id_chek</ColNames>
       <RefSchemaName>restaurant</RefSchemaName>
       <RefTableName>chek</RefTableName>
       <RefColNames>id_chek</RefColNames>
     </foreign-key>
-    <column id="540" parent="356" name="id_users">
+    <column id="551" parent="356" name="id_users">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="541" parent="356" name="login">
+    <column id="552" parent="356" name="login">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="542" parent="356" name="password">
-      <Position>3</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="543" parent="356" name="email">
-      <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="544" parent="356" name="status">
-      <Position>5</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="545" parent="356" name="role">
-      <Position>6</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="546" parent="356" name="userscol">
-      <Position>7</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="547" parent="356" name="client_id_client">
-      <Position>8</Position>
-      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="548" parent="356" name="fk_users_client1_idx">
+    <column id="553" parent="356" name="password">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="554" parent="356" name="email">
+      <Position>4</Position>
+      <DataType>char(100)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="555" parent="356" name="status">
+      <Position>5</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="556" parent="356" name="role">
+      <Position>6</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="557" parent="356" name="userscol">
+      <Position>7</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="558" parent="356" name="client_id_client">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="559" parent="356" name="fk_users_client1_idx">
       <ColNames>client_id_client</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="549" parent="356" name="PRIMARY">
+    <key id="560" parent="356" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_users</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="550" parent="356" name="fk_users_client1">
+    <foreign-key id="561" parent="356" name="fk_users_client1">
       <ColNames>client_id_client</ColNames>
       <RefSchemaName>restaurant</RefSchemaName>
       <RefTableName>client</RefTableName>

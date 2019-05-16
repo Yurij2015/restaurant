@@ -29,4 +29,4 @@ unset($_smarty_tpl_vars);
             </fieldset>
         <?php endif; ?>
     <?php endforeach; endif; unset($_from); ?>
-</div>
+</div>

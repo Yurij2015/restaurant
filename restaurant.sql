@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 15 2019 г., 21:32
+-- Время создания: Май 16 2019 г., 12:41
 -- Версия сервера: 10.3.13-MariaDB
 -- Версия PHP: 7.1.22
 
@@ -70,6 +70,13 @@ CREATE TABLE `menu` (
   `restorans_id_restoran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `menu`
+--
+
+INSERT INTO `menu` (`id_item`, `del_title`, `class_menu`, `number_peace_menu`, `restorans_id_restoran`) VALUES
+(1, 'Пампушки к борщу', 'Класс 1', 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +120,13 @@ CREATE TABLE `price` (
   `menu_id_item` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `price`
+--
+
+INSERT INTO `price` (`id_price`, `price_summer`, `price_fall`, `price_winter`, `price_spring`, `menu_id_item`) VALUES
+(1, 56, 56, 56, 56, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -127,6 +141,13 @@ CREATE TABLE `restorans` (
   `description` text DEFAULT NULL,
   `resto_title` varchar(145) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `restorans`
+--
+
+INSERT INTO `restorans` (`id_restoran`, `number_phone_restoran`, `email`, `address`, `description`, `resto_title`) VALUES
+(1, 'одло', 'одлод', 'длодло', 'длодло', 'длодло');
 
 -- --------------------------------------------------------
 
@@ -143,6 +164,13 @@ CREATE TABLE `season_price_service` (
   `service_id_service` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `season_price_service`
+--
+
+INSERT INTO `season_price_service` (`id_price_service`, `price_summer`, `price_fall`, `price_winter`, `price_spring`, `service_id_service`) VALUES
+(1, 5000, 5000, 5000, 5000, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -154,6 +182,13 @@ CREATE TABLE `service` (
   `service_title` varchar(100) DEFAULT NULL,
   `servicedescription` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `service`
+--
+
+INSERT INTO `service` (`id_service`, `service_title`, `servicedescription`) VALUES
+(1, 'Организация корпоратива', 'Организация кооператива, помощью ');
 
 -- --------------------------------------------------------
 
@@ -208,6 +243,13 @@ CREATE TABLE `users` (
   `userscol` tinyint(4) DEFAULT NULL,
   `client_id_client` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id_users`, `login`, `password`, `email`, `status`, `role`, `userscol`, `client_id_client`) VALUES
+(1, 'MokrijYurij', 'caf06c40d164c29db016e27f81524b04', 'nabor_2008@mail.ru', NULL, NULL, NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -328,7 +370,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT для таблицы `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `menu_season_price`
@@ -346,25 +388,25 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT для таблицы `price`
 --
 ALTER TABLE `price`
-  MODIFY `id_price` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_price` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `restorans`
 --
 ALTER TABLE `restorans`
-  MODIFY `id_restoran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_restoran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `season_price_service`
 --
 ALTER TABLE `season_price_service`
-  MODIFY `id_price_service` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_price_service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `service`
 --
 ALTER TABLE `service`
-  MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `service_client`
@@ -377,6 +419,12 @@ ALTER TABLE `service_client`
 --
 ALTER TABLE `ticket`
   MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

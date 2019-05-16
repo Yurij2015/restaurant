@@ -56,4 +56,4 @@ if ($this->_foreach['Details']['total'] > 0):
 $this->_smarty_include(array('smarty_include_tpl_file' => "forms/actions_wrapper.tpl", 'smarty_include_vars' => array('ActionsContent' => $this->_tpl_vars['ActionsContent'],'isHorizontal' => $this->_tpl_vars['isHorizontal'],'top' => $this->_tpl_vars['top'])));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
- ?>
+ ?>

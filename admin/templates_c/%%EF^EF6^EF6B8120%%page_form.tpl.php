@@ -42,4 +42,3 @@ unset($_smarty_tpl_vars);
  ?>
 </div>
 
-

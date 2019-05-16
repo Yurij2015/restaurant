@@ -54,6 +54,7 @@
                     new IntegerField('service_id_service', true)
                 )
             );
+            $this->dataset->AddLookupField('service_id_service', 'service', new IntegerField('id_service'), new StringField('service_title', false, false, false, false, 'service_id_service_service_title', 'service_id_service_service_title_service'), 'service_id_service_service_title_service');
         }
     
         protected function DoPrepare() {
@@ -89,7 +90,7 @@
                 new FilterColumn($this->dataset, 'price_fall', 'price_fall', 'Осенние цены'),
                 new FilterColumn($this->dataset, 'price_winter', 'price_winter', 'Зимние цены'),
                 new FilterColumn($this->dataset, 'price_spring', 'price_spring', 'Весенние цены'),
-                new FilterColumn($this->dataset, 'service_id_service', 'service_id_service', 'Услуги')
+                new FilterColumn($this->dataset, 'service_id_service', 'service_id_service_service_title', 'Услуги')
             );
         }
     
@@ -195,13 +196,10 @@
             $grid->AddViewColumn($column);
             
             //
-            // View column for service_id_service field
+            // View column for service_title field
             //
-            $column = new NumberViewColumn('service_id_service', 'service_id_service', 'Услуги', $this->dataset);
+            $column = new TextViewColumn('service_id_service', 'service_id_service_service_title', 'Услуги', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
@@ -239,13 +237,10 @@
             $grid->AddSingleRecordViewColumn($column);
             
             //
-            // View column for service_id_service field
+            // View column for service_title field
             //
-            $column = new NumberViewColumn('service_id_service', 'service_id_service', 'Услуги', $this->dataset);
+            $column = new TextViewColumn('service_id_service', 'service_id_service_service_title', 'Услуги', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddSingleRecordViewColumn($column);
         }
     
@@ -302,8 +297,24 @@
             //
             // Edit column for service_id_service field
             //
-            $editor = new TextEdit('service_id_service_edit');
-            $editColumn = new CustomEditColumn('Услуги', 'service_id_service', $editor, $this->dataset);
+            $editor = new ComboBox('service_id_service_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
+            $lookupDataset = new TableDataset(
+                MySqlIConnectionFactory::getInstance(),
+                GetConnectionOptions(),
+                '`service`');
+            $lookupDataset->addFields(
+                array(
+                    new IntegerField('id_service', true, true, true),
+                    new StringField('service_title'),
+                    new StringField('servicedescription')
+                )
+            );
+            $lookupDataset->setOrderByField('service_title', 'ASC');
+            $editColumn = new LookUpEditColumn(
+                'Услуги', 
+                'service_id_service', 
+                $editor, 
+                $this->dataset, 'id_service', 'service_title', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $editColumn->setAllowListCellEdit(false);
@@ -357,8 +368,24 @@
             //
             // Edit column for service_id_service field
             //
-            $editor = new TextEdit('service_id_service_edit');
-            $editColumn = new CustomEditColumn('Услуги', 'service_id_service', $editor, $this->dataset);
+            $editor = new ComboBox('service_id_service_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
+            $lookupDataset = new TableDataset(
+                MySqlIConnectionFactory::getInstance(),
+                GetConnectionOptions(),
+                '`service`');
+            $lookupDataset->addFields(
+                array(
+                    new IntegerField('id_service', true, true, true),
+                    new StringField('service_title'),
+                    new StringField('servicedescription')
+                )
+            );
+            $lookupDataset->setOrderByField('service_title', 'ASC');
+            $editColumn = new LookUpEditColumn(
+                'Услуги', 
+                'service_id_service', 
+                $editor, 
+                $this->dataset, 'id_service', 'service_title', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -410,8 +437,24 @@
             //
             // Edit column for service_id_service field
             //
-            $editor = new TextEdit('service_id_service_edit');
-            $editColumn = new CustomEditColumn('Услуги', 'service_id_service', $editor, $this->dataset);
+            $editor = new ComboBox('service_id_service_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
+            $lookupDataset = new TableDataset(
+                MySqlIConnectionFactory::getInstance(),
+                GetConnectionOptions(),
+                '`service`');
+            $lookupDataset->addFields(
+                array(
+                    new IntegerField('id_service', true, true, true),
+                    new StringField('service_title'),
+                    new StringField('servicedescription')
+                )
+            );
+            $lookupDataset->setOrderByField('service_title', 'ASC');
+            $editColumn = new LookUpEditColumn(
+                'Услуги', 
+                'service_id_service', 
+                $editor, 
+                $this->dataset, 'id_service', 'service_title', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -455,13 +498,10 @@
             $grid->AddPrintColumn($column);
             
             //
-            // View column for service_id_service field
+            // View column for service_title field
             //
-            $column = new NumberViewColumn('service_id_service', 'service_id_service', 'Услуги', $this->dataset);
+            $column = new TextViewColumn('service_id_service', 'service_id_service_service_title', 'Услуги', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddPrintColumn($column);
         }
     
@@ -496,13 +536,10 @@
             $grid->AddExportColumn($column);
             
             //
-            // View column for service_id_service field
+            // View column for service_title field
             //
-            $column = new NumberViewColumn('service_id_service', 'service_id_service', 'Услуги', $this->dataset);
+            $column = new TextViewColumn('service_id_service', 'service_id_service_service_title', 'Услуги', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddExportColumn($column);
         }
     
@@ -537,13 +574,10 @@
             $grid->AddCompareColumn($column);
             
             //
-            // View column for service_id_service field
+            // View column for service_title field
             //
-            $column = new NumberViewColumn('service_id_service', 'service_id_service', 'Услуги', $this->dataset);
+            $column = new TextViewColumn('service_id_service', 'service_id_service_service_title', 'Услуги', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddCompareColumn($column);
         }
     

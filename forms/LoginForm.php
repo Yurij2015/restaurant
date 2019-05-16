@@ -6,14 +6,14 @@
  */
 
 class LoginForm {
-	private $email;
+	private $login;
 	private $password;
 
 	/**
 	 * @param array $data
 	 */
 	public function __construct( Array $data ) {
-		$this->email = isset( $data['email'] ) ? $data['email'] : null;
+		$this->login = isset( $data['login'] ) ? $data['login'] : null;
 		$this->password = isset( $data['password'] ) ? $data['password'] : null;
 	}
 
@@ -21,24 +21,38 @@ class LoginForm {
 	 * @return bool
 	 */
 	public function validate() {
-		return ! empty( $this->email ) && ! empty( $this->password );
+		return ! empty( $this->login ) && ! empty( $this->password );
 	}
 
 	/**
 	 * @return mixed
 	 */
 	public function getEmail() {
-		return $this->email;
+		return $this->login;
 	}
 
 	/**
-	 * @param mixed $email
+	 * @param mixed $login
 	 */
-	public function setEmail( $email ) {
-		$this->email = $email;
+	public function setEmail( $login ) {
+		$this->login = $login;
 	}
 
-	/**
+    /**
+     * @return mixed
+     */
+    public function getLogin() {
+        return $this->login;
+    }
+
+    /**
+     * @param mixed $login
+     */
+    public function setLogin( $login ) {
+        $this->login = $login;
+    }
+
+    /**
 	 * @return mixed
 	 */
 	public function getPassword() {

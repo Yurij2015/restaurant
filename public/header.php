@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="css/ie-style.css"><![endif]-->
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="index.html#">
+    <link rel="shortcut icon" href="index.php#">
 </head>
 
 <body>
@@ -60,12 +60,19 @@
                             <span><i class="fa fa-phone red"></i> 897-659-5489</span>
                         </div>
                     </div>
+                    <div class="col-md-4 col-sm-4">
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <?php if (Session::has('login')) { ?>
+                            <h5>Вы вошли как: <?= Session::get('login') ?> | <a href="logout.php">Выйти</a></h5>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-5">
                     <!-- Link -->
-                    <a href="index.html">
+                    <a href="index.php">
                         <!-- Logo area -->
                         <div class="logo">
                             <img class="img-responsive" src="img/logo.png" alt=""/>
@@ -94,19 +101,25 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="index.html"><img src="img/nav-menu/nav1.jpg" class="img-responsive"
-                                                                  alt=""/> Главная</a></li>
+                                    <li><a href="index.php"><img src="img/nav-menu/nav1.jpg" class="img-responsive"
+                                                                 alt=""/> Главная</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                                src="img/nav-menu/nav5.jpg" class="img-responsive" alt=""/> Страницы <b
-                                                class="caret"></b></a>
+                                                    src="img/nav-menu/nav5.jpg" class="img-responsive" alt=""/> Страницы
+                                            <b
+                                                    class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="error.html">Рестораны</a></li>
-                                            <li><a href="0-base.html">Меню</a></li>
-                                            <li><a href="blog.html">Цены</a></li>
-                                            <li><a href="blog-single.html">Регистрация</a></li>
-                                            <li><a href="blog-single.html">Авторизация</a></li>
-                                            <li><a href="../admin" target="_blank">Административная панель</a></li>
+                                            <li><a href="restorans.php" target="_blank">Рестораны</a></li>
+                                            <li><a href="menu.php" target="_blank">Меню</a></li>
+                                            <?php if (!Session::has('login')) { ?>
+                                                <li><a href="register.php" target="_blank">Регистрация</a></li>
+                                                <li><a href="login.php" target="_blank">Авторизация</a></li>
+                                            <?php } ?>
+
+                                            <?php if (Session::has('login')) { ?>
+                                                <li><a href="price.php" target="_blank">Цены в меню</a></li>
+                                                <li><a href="service_price.php" target="_blank">Цены на услуги</a></li>
+                                            <?php } ?>
                                         </ul>
                                     </li>
 

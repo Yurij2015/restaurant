@@ -2,7 +2,7 @@
 set_include_path('../..' . PATH_SEPARATOR . get_include_path());
 
 include_once '../captions.php';
-include_once '../../settings.php';
+include_once '../../phpgen_settings.php';
 
 header('Content-Type: application/json');
 

@@ -13,7 +13,7 @@
         <!-- Copyright -->
         <div class="footer-copyright">
             <!-- Paragraph -->
-            <p><?php echo "&copy;" . " " . date("Y"); ?> <a href="index.html#">Restaurant</a></p>
+            <p><?php echo "&copy;" . " " . date("Y"); ?> <a href="index.php#">Restaurant</a> | <a href="../admin" target="_blank">Admin</a></p>
         </div>
     </div>
 </div>
@@ -24,7 +24,7 @@
 
 
 <!-- Scroll to top -->
-<span class="totop"><a href="index.html#"><i class="fa fa-angle-up"></i></a></span>
+<span class="totop"><a href="index.php#"><i class="fa fa-angle-up"></i></a></span>
 
 
 <!-- Javascript files -->
