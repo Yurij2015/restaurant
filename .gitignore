@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .gitignore
 /.idea/
+<<<<<<< HEAD
 .idea/sqldialects.xml
+=======
+>>>>>>> 1da4fa2223304766be27d9e50796cc5d9bdfdc29
+/.gitignore
