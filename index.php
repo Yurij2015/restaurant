@@ -19,7 +19,7 @@ $db = new DB($host, $user, $password, $db_name);
 <?php include 'pages/header.php' ?>
 <?= isset($_GET['msg']) ? $_GET['msg'] : ''; ?>
 <hr>
-<h5 align="center">Система учета материалов</h5>
+<h5 align="center">Ресторан</h5>
 <hr>
 <div class="container">
     <div class="row">
@@ -35,8 +35,8 @@ $db = new DB($host, $user, $password, $db_name);
         <div class="col-sm">
             <div class="text-justify border border-bottom-0 border-right-0"
                  style="line-height: 40px; padding-left: 10px; padding-right: 10px;">
-                <p style="line-height: 30px; margin-bottom: 5px">Менеджер задач для сотрудников</p>
-                вавава
+                <p style="line-height: 30px; margin-bottom: 5px">Административная панель</p>
+                Управление данными веб-приложения
 
             </div>
         </div>
