@@ -26,7 +26,8 @@ $grants = array('guest' =>
         'service_client' => new PermissionSet(false, false, false, false),
         'service_season_price' => new PermissionSet(false, false, false, false),
         'ticket' => new PermissionSet(false, false, false, false),
-        'users' => new PermissionSet(false, false, false, false))
+        'users' => new PermissionSet(false, false, false, false),
+        'online_order' => new PermissionSet(false, false, false, false))
     ,
     'Resto' => 
         array('chek' => new PermissionSet(false, false, false, false),
@@ -41,7 +42,8 @@ $grants = array('guest' =>
         'service_client' => new PermissionSet(false, false, false, false),
         'service_season_price' => new PermissionSet(false, false, false, false),
         'ticket' => new PermissionSet(false, false, false, false),
-        'users' => new PermissionSet(false, false, false, false))
+        'users' => new PermissionSet(false, false, false, false),
+        'online_order' => new PermissionSet(false, false, false, false))
     );
 
 $appGrants = array('guest' => new PermissionSet(false, false, false, false),
@@ -62,7 +64,8 @@ $tableCaptions = array('chek' => 'Счета',
 'service_client' => 'Заказанные услуги',
 'service_season_price' => 'Цены на услуги',
 'ticket' => 'Чеки',
-'users' => 'Пользователи');
+'users' => 'Пользователи',
+'online_order' => 'Онлайн заказы');
 
 function SetUpUserAuthorization()
 {

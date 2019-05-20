@@ -1,7 +1,11 @@
 <?php
 session_start();
 require_once('../Session.php');
-$msg .= $_GET['msg'];
+$msg = "";
+if (isset($_GET['msg'])) {
+    $msg = $_GET['msg'];
+}
+$title = "Главная страница";
 include_once('header.php')
 ?>
     <!-- Slider Start

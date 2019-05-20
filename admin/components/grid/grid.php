@@ -1772,6 +1772,16 @@ class Grid {
                 return $customTotalValue;
             }
 
+            if ($column instanceof NumberViewColumn) {
+                $totalValue = number_format(
+                    (double) $totalValue,
+                    $column->GetNumberAfterDecimal(),
+                    $column->GetDecimalSeparator(),
+                    $column->GetThousandsSeparator()
+                );
+
+            }
+
             return StringUtils::Format('%s = %s', $aggregate, $totalValue);
         }
         return '';

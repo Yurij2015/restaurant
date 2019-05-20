@@ -902,6 +902,22 @@ abstract class Page extends CommonPage implements IVariableContainer
         return $this->charts;
     }
 
+    /**
+     * @param string $chartId
+     * @return Chart || null
+     */
+    public function getChartById($chartId) {
+        foreach ($this->getCharts() as $position => $chartsInfo) {
+            foreach ($chartsInfo as $chartInfo) {
+                $chart = $chartInfo['chart'];
+                if ($chart->getId() == $chartId) {
+                    return $chart;
+                }
+            }
+        }
+        return null;
+    }
+
     public function hasCharts()
     {
         return 0 < count($this->charts[ChartPosition::BEFORE_GRID])

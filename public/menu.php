@@ -11,6 +11,10 @@ require_once('../Session.php');
 require_once('../Dbsettings.php');
 require_once('../DB.php');
 include_once('header.php');
+$msg = '';
+if (isset($_GET['msg'])) {
+    $msg = $_GET['msg'];
+}
 ?>
     <!-- Banner Start -->
     <div class="banner padd">
@@ -40,6 +44,8 @@ include_once('header.php');
                     <h2>Меню</h2>
                     <!-- Paragraph -->
                     <p>Наше меню с лучшими блюдами в городе</p>
+                    <b style="color: red;"><?= $msg; ?></b>
+
                     <!-- Border -->
                     <div class="border"></div>
                 </div>
@@ -76,6 +82,10 @@ include_once('header.php');
                     echo $e->getMessage() . ':(';
                 }
                 ?>
+                <?php if (Session::has('login')) { ?>
+                    <a href="customer-order.php" target="_blank" class="btn btn-primary">Оформить заказ</a>
+                <?php } ?>
+
             </div>
         </div>
     </div><!-- / Inner Page Content End -->

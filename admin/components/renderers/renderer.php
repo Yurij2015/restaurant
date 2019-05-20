@@ -442,12 +442,7 @@ abstract class Renderer
         $this->result = $this->getWrappedViewColumnValue($column, sprintf(
             '%s%s%s',
             $prefix,
-            number_format(
-                (double) $column->GetValue(),
-                $column->GetNumberAfterDecimal(),
-                $column->GetDecimalSeparator(),
-                $column->GetThousandsSeparator()
-            ),
+            $column->getFormattedValue(),
             $suffix
         ));
     }

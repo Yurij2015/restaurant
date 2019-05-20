@@ -71,6 +71,7 @@ function GetPageInfos()
     $result[] = array('caption' => 'Заказанные услуги', 'short_caption' => 'Заказанные услуги', 'filename' => 'service_client.php', 'name' => 'service_client', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
     $result[] = array('caption' => 'Чеки', 'short_caption' => 'Чеки', 'filename' => 'ticket.php', 'name' => 'ticket', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
     $result[] = array('caption' => 'Пользователи', 'short_caption' => 'Пользователи', 'filename' => 'users.php', 'name' => 'users', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
+    $result[] = array('caption' => 'Онлайн заказы', 'short_caption' => 'Онлайн заказы', 'filename' => 'online_order.php', 'name' => 'online_order', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
     return $result;
 }
 
